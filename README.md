@@ -1,1 +1,1 @@
-### This is a collection of customizations configs for various tools
+### Personal collection of files/configs/etc. for customization
