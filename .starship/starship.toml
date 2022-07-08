@@ -27,7 +27,7 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format = "on 🖥️ [$hostname](bold purple) "
+format = "on 🖥️[$hostname](bold purple) "
 disabled = false
 
 [directory]
