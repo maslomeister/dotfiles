@@ -757,6 +757,52 @@
           "border": 0,
           "shape": { "wide": false, "tall": false },
           "timestamp": 1659546303867
+        },
+        {
+          "url": "https://penpot.app/",
+          "display": {
+            "alignment": "bottom-right",
+            "direction": "vertical",
+            "order": "visual-name",
+            "rotate": 0,
+            "translate": { "x": -8, "y": 0 },
+            "gutter": 25,
+            "name": { "show": true, "text": "Penpot", "size": 16 },
+            "visual": {
+              "show": true,
+              "type": "icon",
+              "size": 36,
+              "letter": { "text": "" },
+              "icon": {
+                "name": "drafting-compass",
+                "prefix": "fas",
+                "label": "Drafting Compass"
+              },
+              "image": { "url": "" },
+              "shadow": { "size": 0 }
+            }
+          },
+          "accent": {
+            "by": "theme",
+            "hsl": { "h": 0, "s": 0, "l": 0 },
+            "rgb": { "r": 0, "g": 0, "b": 0 }
+          },
+          "color": {
+            "by": "theme",
+            "hsl": { "h": 0, "s": 0, "l": 0 },
+            "rgb": { "r": 0, "g": 0, "b": 0 },
+            "opacity": 50
+          },
+          "background": {
+            "show": false,
+            "type": "image",
+            "opacity": 100,
+            "image": { "url": "" },
+            "video": { "url": "" }
+          },
+          "border": 0,
+          "shape": { "wide": false, "tall": false },
+          "timestamp": 1663314491165
         }
       ]
     },
@@ -961,6 +1007,52 @@
           "border": 0,
           "shape": { "wide": false, "tall": false },
           "timestamp": 1659435563265
+        },
+        {
+          "url": "http://www.flibusta.site/",
+          "display": {
+            "alignment": "bottom-right",
+            "direction": "vertical",
+            "order": "visual-name",
+            "rotate": 0,
+            "translate": { "x": -8, "y": 0 },
+            "gutter": 25,
+            "name": { "show": true, "text": "Flibusta", "size": 16 },
+            "visual": {
+              "show": true,
+              "type": "icon",
+              "size": 32,
+              "letter": { "text": "" },
+              "icon": {
+                "name": "book-reader",
+                "prefix": "fas",
+                "label": "Book Reader"
+              },
+              "image": { "url": "" },
+              "shadow": { "size": 0 }
+            }
+          },
+          "accent": {
+            "by": "theme",
+            "hsl": { "h": 0, "s": 0, "l": 0 },
+            "rgb": { "r": 0, "g": 0, "b": 0 }
+          },
+          "color": {
+            "by": "theme",
+            "hsl": { "h": 0, "s": 0, "l": 0 },
+            "rgb": { "r": 0, "g": 0, "b": 0 },
+            "opacity": 50
+          },
+          "background": {
+            "show": false,
+            "type": "image",
+            "opacity": 100,
+            "image": { "url": "" },
+            "video": { "url": "" }
+          },
+          "border": 0,
+          "shape": { "wide": false, "tall": false },
+          "timestamp": 1661362229859
         },
         {
           "url": "https://www.youtube.com/",

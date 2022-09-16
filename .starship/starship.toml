@@ -9,19 +9,19 @@ command_timeout = 1000
 
 # Change the default prompt format
 format = """\
-[╭╴](238)$env_var\
-$all[╰─](238)$character"""
+[┌─](240)$env_var\
+$all[└─](240)$character"""
 # 
 # Change the default prompt characters
 [character]
-success_symbol = "[>](238)"
-error_symbol = "[>](238)"
+success_symbol = "[⟮](240)"
+error_symbol = "[⟮](240)"
 
-# Shows the username
+#Shows the username
 [username]
-style_user = "141"
+style_user = "135"
 style_root = "white"
-format = "[$user](bold $style)"
+format = " [$user](bold $style)"
 disabled = false
 show_always = true
 
@@ -77,7 +77,7 @@ symbol = " "
 python_binary = "python3"
 
 [nodejs]
-format = "| [ $version](bold green) "
+format = "| [ $version](bold 48) "
 disabled = true
 
 [ruby]
