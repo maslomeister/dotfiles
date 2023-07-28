@@ -18,7 +18,7 @@
           "powerline_symbol": "\ue0b4",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
-          "template": "<#030304>{{.Icon}}</> {{ .UserName }} <#030304>\ufcbe</> {{ .HostName }} ",
+          "template": "<#030304>{{.Icon}}</> {{ .UserName }} <#030304>\ue266</> {{ .HostName }} ",
           "type": "os"
         },
         {
@@ -47,7 +47,7 @@
           "foreground": "p:text",
           "powerline_symbol": "\ue0b4",
           "style": "powerline",
-          "template": "<#030304>\uf85a</> RAM: {{ round .PhysicalPercentUsed .Precision }}% | {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
+          "template": "<#030304>\ue266</> RAM: {{ round .PhysicalPercentUsed .Precision }}% | {{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB ",
           "type": "sysinfo"
         },
         {
