@@ -13,7 +13,7 @@
 		"type": "play",
 		"align": "right",
 		"bordered": false,
-		"width": 200
+		"width": 64
 	},
 	{
 		"type": "brightnessDown",
