@@ -2,43 +2,146 @@
 	{
 		"type": "escape",
 		"width": 80,
+		"background": "#D145DE",
 		"align": "left"
 	},
 	{
-		"type": "dock",
-		"autoResize": false,
+		"type": "appleScriptTitledButton",
+		"action": "appleScript",
+		"refreshInterval": 1,
+		"background": "#fff",
+		"source": {
+			"inline": "if application \"Visual Studio Code\" is running then\r return \"F2\"\r else\r return \"\"\r end if"
+		},
+		"actionAppleScript": {
+			"inline": "tell application \"System Events\"\r key code 120\r end tell"
+		},
+		"width": 80,
 		"align": "left"
 	},
-	{
-		"type": "play",
-		"align": "right",
-		"bordered": false,
-		"width": 64
-	},
-	{
-		"type": "brightnessDown",
-		"width": 48,
-		"bordered": false,
-		"align": "right"
-	},
-	{
-		"type": "brightnessUp",
-		"width": 48,
-		"bordered": false,
-		"align": "right"
-	},
-	{
-		"type": "illuminationDown",
-		"bordered": false,
-		"align": "right",
-		"width": 48
-	},
-	{
-		"type": "illuminationUp",
-		"bordered": false,
-		"align": "right",
-		"width": 48
-	},
+	// {
+	//   "type": "group",
+	//   "align": "left",
+	//   "title": "FN",
+	//   "items": [
+	//       {
+	//           "type": "close",
+	//           "bordered": false,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F1",
+	//           "action": "keyPress",
+	//           "keycode": 122,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F2",
+	//           "action": "keyPress",
+	//           "keycode": 120,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F3",
+	//           "action": "keyPress",
+	//           "keycode": 99,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F4",
+	//           "action": "keyPress",
+	//           "keycode": 118,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//         "type": "staticButton",
+	//         "title": " ",
+	//         "width": 16,
+	//         "bordered": false,
+	//         "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F5",
+	//           "action": "keyPress",
+	//           "keycode": 96,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F6",
+	//           "action": "keyPress",
+	//           "keycode": 97,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F7",
+	//           "action": "keyPress",
+	//           "keycode": 98,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F8",
+	//           "action": "keyPress",
+	//           "keycode": 100,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": " ",
+	//           "width": 0,
+	//           "bordered": false,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F9",
+	//           "action": "keyPress",
+	//           "keycode": 101,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F10",
+	//           "action": "keyPress",
+	//           "keycode": 109,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F11",
+	//           "action": "keyPress",
+	//           "keycode": 103,
+	//           "width": 80,
+	//           "align": "left"
+	//       },
+	//       {
+	//           "type": "staticButton",
+	//           "title": "F12",
+	//           "action": "keyPress",
+	//           "keycode": 111,
+	//           "width": 80,
+	//           "align": "left"
+	//       }
+	//   ]
+	// },
 	// Mute mic
 	{
 		"type": "appleScriptTitledButton",
@@ -62,11 +165,53 @@
 		}
 	},
 	{
+		"type": "play",
+		"align": "right",
+		"bordered": false,
+		"width": 64
+	},
+	{
+		"type": "volumeDown",
+		"bordered": false,
+		"align": "right",
+		"width": 60
+	},
+	{
+		"type": "volumeUp",
+		"bordered": false,
+		"align": "right",
+		"width": 60
+	},
+	{
+		"type": "brightnessDown",
+		"width": 48,
+		"bordered": false,
+		"align": "right"
+	},
+	{
+		"type": "brightnessUp",
+		"width": 60,
+		"bordered": false,
+		"align": "right"
+	},
+	{
+		"type": "illuminationDown",
+		"bordered": false,
+		"align": "right",
+		"width": 60
+	},
+	{
+		"type": "illuminationUp",
+		"bordered": false,
+		"align": "right",
+		"width": 60
+	},
+	{
 		"type": "staticButton",
 		"title": "",
 		"bordered": false,
 		"align": "right",
-		"width": 48,
+		"width": 60,
 		"action": "appleScript",
 		"actionAppleScript": {
 			"inline": "tell application \"System Events\" \r key code 3 using {control down, command down} \r end tell"
@@ -81,7 +226,7 @@
 	},
 	{
 		"type": "appleScriptTitledButton",
-		"width": 48,
+		"width": 60,
 		"align": "right",
 		"refreshInterval": 1,
 		"source": {
