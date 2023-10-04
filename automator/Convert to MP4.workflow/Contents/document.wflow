@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>523</string>
+	<key>AMApplicationVersion</key>
+	<string>2.10</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>2.0.3</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<dict/>
+					<key>CheckedForUserDefaultShell</key>
+					<dict/>
+					<key>inputMethod</key>
+					<dict/>
+					<key>shell</key>
+					<dict/>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.cocoa.string</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run Shell Script.action</string>
+				<key>ActionName</key>
+				<string>Run Shell Script</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string>for file in "$@"
+do
+    # Get the file extension
+    ext=$(echo "$file" | awk -F . '{print $NF}')
+
+    # Check if the file is a MOV file
+    if [ "$ext" = "mov" ]; then
+        # Get the filename without extension
+        filename=$(basename "$file" .mov)
+
+        # Get the directory of the input file
+        dir=$(dirname "$file")
+
+        # Change the working directory to the input file's directory
+        cd "$dir"
+
+        # Run ffmpeg to convert MOV to MP4
+        /usr/local/bin/ffmpeg -i "$file" -c:v libx264 -c:a aac -strict experimental "$filename.mp4"
+
+        # Optional: Delete the original MOV file
+        rm "$file"
+    else
+        # Display a dialog message if the file is not a MOV file
+        osascript -e 'tell app "System Events" to display dialog "The selected file is not a MOV file." buttons {"OK"} default button "OK" with title "File Not Supported"'
+    fi
+done
+</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>1</integer>
+					<key>shell</key>
+					<string>/bin/zsh</string>
+					<key>source</key>
+					<string></string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.RunShellScript</string>
+				<key>CFBundleVersion</key>
+				<string>2.0.3</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunShellScriptAction</string>
+				<key>InputUUID</key>
+				<string>9427A5D8-5FBB-46D2-808A-0EEFF9D1EEFF</string>
+				<key>Keywords</key>
+				<array>
+					<string>Shell</string>
+					<string>Script</string>
+					<string>Command</string>
+					<string>Run</string>
+					<string>Unix</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>65438FCE-B742-43CA-BB28-1163B6E6D434</string>
+				<key>UUID</key>
+				<string>EA9A2F24-5BE7-42C7-B5A1-D41394F935B0</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<integer>0</integer>
+						<key>name</key>
+						<string>inputMethod</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+					<key>1</key>
+					<dict>
+						<key>default value</key>
+						<false/>
+						<key>name</key>
+						<string>CheckedForUserDefaultShell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>1</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>2</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>default value</key>
+						<string></string>
+						<key>name</key>
+						<string>COMMAND_STRING</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>3</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>default value</key>
+						<string>/bin/sh</string>
+						<key>name</key>
+						<string>shell</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>4</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<integer>1</integer>
+				<key>location</key>
+				<string>309.000000:305.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict/>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>applicationBundleID</key>
+		<string>com.apple.finder</string>
+		<key>applicationBundleIDsByPath</key>
+		<dict>
+			<key>/System/Library/CoreServices/Finder.app</key>
+			<string>com.apple.finder</string>
+		</dict>
+		<key>applicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
+		<key>applicationPaths</key>
+		<array>
+			<string>/System/Library/CoreServices/Finder.app</string>
+		</array>
+		<key>customImageFileData</key>
+		<data>
+		PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBp
+		ZD0idXVpZC0wY2U5NGZiNC0yMDQwLTRkODMtYWRkNi00MzA5N2QxYjgwNWIi
+		IGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3Jn
+		LzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTQ2IDE0NiI+CiAgPHJlY3QgeD0i
+		Mi4zMyIgeT0iOCIgd2lkdGg9IjE0MC41NCIgaGVpZ2h0PSIxMzAuMDUiIHN0
+		eWxlPSJmaWxsOiByZ2JhKDI1NSwgMjU1LCAyNTUsIDApOyIvPgogIDxwYXRo
+		IGQ9Im0xMzAuNTEsMTM1Ljg1YzIuODMsMi44OSw3LjU4LDIuODUsMTAuMjYs
+		MCwyLjc3LTIuOTEsMi44MS03LjQsMC0xMC4yN2wtNjAuOTYtNjEuMjRjLTIu
+		OC0yLjg1LTcuNTgtMi44NS0xMC4yNywwLTIuODEsMi44Ny0yLjc2LDcuNDQs
+		MCwxMC4yN2w2MC45Nyw2MS4yNFptLTM2LjkyLTQ0LjE3bC0xOS4yNy0xOS4z
+		MWMtMS4yMS0xLjE4LTEuNi0yLjU5LS40MS0zLjc3LDEuMDQtMS4wMywyLjUt
+		LjcyLDMuNzMuNTJsMTkuMjMsMTkuMjUtMy4yOCwzLjMyWiIgc3R5bGU9ImZp
+		bGw6IHJnYmEoMjU1LCAyNTUsIDI1NSwgLjg1KTsiLz4KICA8cGF0aCBkPSJt
+		NTEuMSwxMzYuMTJjMS4yLDAsMi4wMy0uODUsMi4yLTIuMTEsMi4yMi0xNy4x
+		NywyLjgxLTE3LjUzLDIwLjM2LTIwLjQyLDEuMzktLjE4LDIuMi0uOTEsMi4y
+		LTIuMTVzLS44MS0yLTEuOTUtMi4yYy0xNy43My0zLjQyLTE4LjQtMy4yNy0y
+		MC42LTIwLjQyLS4xNy0xLjI2LS45OS0yLjA3LTIuMi0yLjA3cy0yLjAzLjgx
+		LTIuMTUsMi4wMmMtMi4zMiwxNy40NS0yLjc3LDE3LjgzLTIwLjYzLDIwLjQ3
+		LTEuMS4xMy0xLjk2LDEtMS45NiwyLjJzLjg1LDEuOTYsMS45NSwyLjE1YzE3
+		LjksMy40NiwxOC4yOSwzLjM4LDIwLjY0LDIwLjUzLjEzLDEuMTUsMSwyLDIu
+		MTUsMlptLTMwLjY2LTU1LjkxYy44OCwwLDEuNDQtLjY0LDEuNTktMS40Nywy
+		LjE1LTEyLjAxLDIuMzItMTIuODEsMTUtMTUuMDEuOTEtLjE4LDEuNS0uNzEs
+		MS41LTEuNjNzLS41OC0xLjQ1LTEuNDUtMS42M2MtMTIuNzYtMi4yOC0xMi44
+		My0zLjA3LTE1LjA1LTE1LS4xNi0uODQtLjcxLTEuNDgtMS41OS0xLjQ4cy0x
+		LjQ3LjY0LTEuNTgsMS40N2MtMi4xNSwxMi4wNS0yLjMsMTIuODQtMTUuMDQs
+		MTUuMDEtLjkxLjE3LTEuNS43MS0xLjUsMS42M3MuNTgsMS40NSwxLjQ5LDEu
+		NjNjMTIuNzUsMi4yNywxMi43OSwzLjA4LDE1LjA1LDE1LjAzLjEyLjgxLjcx
+		LDEuNDUsMS41OCwxLjQ1Wm0zNC43Ny00MS4wN2MuNzYsMCwxLjE3LS41NCwx
+		LjMzLTEuMjUsMi4xNi0xMC4zMSwyLjEyLTEwLjgzLDEyLjkzLTEyLjk0Ljgt
+		LjE4LDEuMzItLjYxLDEuMzItMS4zN3MtLjUyLTEuMjUtMS4zLTEuMzdjLTEw
+		Ljg4LTIuMjItMTAuOTEtMi42OC0xMi45Ni0xMi45My0uMTUtLjc3LS41Ny0x
+		LjI2LTEuMzMtMS4yNnMtMS4yMS40OS0xLjM3LDEuMjVjLTIuMTcsMTAuMzMt
+		Mi4wNiwxMC44OS0xMi45NSwxMi45NC0uNzcuMTEtMS4yNi42LTEuMjYsMS4z
+		NywwLC43Mi40OCwxLjIsMS4yNSwxLjM3LDEwLjkxLDIuMTgsMTAuODgsMi42
+		OCwxMi45NywxMi45NS4xNS43MS42LDEuMjUsMS4zNywxLjI1Wm01My41Niwy
+		Mi4yN2MuODcsMCwxLjQ2LS41OSwxLjU5LTEuNDYsMi4zMy0xMS45NSwyLjM1
+		LTEyLjc3LDE0Ljk5LTE1LjAyLjk1LS4xMywxLjU1LS43LDEuNTUtMS41OHMt
+		LjU5LTEuNDUtMS41LTEuNjNjLTEyLjcyLTIuMzItMTIuOS0zLjEtMTUuMDQt
+		MTUtLjExLS44OC0uNzItMS40Ny0xLjU5LTEuNDdzLTEuNDMuNTktMS41OSwx
+		LjQ2Yy0yLjI1LDEyLTIuMjksMTIuODktMTUuMDMsMTUuMDEtLjg3LjE2LTEu
+		NDguNzEtMS40NywxLjYzLDAsLjg4LjU4LDEuNDUsMS40NiwxLjU4LDEyLjc1
+		LDIuMywxMi44OCwzLjEsMTUuMDQsMTUuMDMuMTUuODYuNzEsMS40NSwxLjU5
+		LDEuNDVaIiBzdHlsZT0iZmlsbDogcmdiYSgyNTUsIDI1NSwgMjU1LCAuODUp
+		OyIvPgo8L3N2Zz4=
+		</data>
+		<key>customImageFileExtension</key>
+		<string>svg</string>
+		<key>inputTypeIdentifier</key>
+		<string>com.apple.Automator.fileSystemObject.movie</string>
+		<key>outputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>presentationMode</key>
+		<integer>15</integer>
+		<key>processesInput</key>
+		<integer>0</integer>
+		<key>serviceApplicationBundleID</key>
+		<string>com.apple.finder</string>
+		<key>serviceApplicationPath</key>
+		<string>/System/Library/CoreServices/Finder.app</string>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.fileSystemObject.movie</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>serviceProcessesInput</key>
+		<integer>0</integer>
+		<key>useAutomaticInputType</key>
+		<integer>0</integer>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>
