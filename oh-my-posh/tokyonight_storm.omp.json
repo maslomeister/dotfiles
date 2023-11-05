@@ -17,24 +17,21 @@
         {
           "background": "p:blue",
           "foreground": "p:text",
-          "powerline_symbol": "\ue0b4",
           "leading_diamond": "\ue0b6",
           "style": "diamond",
-          "template": "<#030304>{{.Icon}}</> {{ .UserName }}",
+          "template": " <#030304>{{.Icon}}</> {{.UserName}} ",
           "type": "os"
         },
         {
           "background": "p:pink",
           "foreground": "p:text",
-          "powerline_symbol": "\ue0b4",
-          "leading_diamond": "\ue0b6",
-          "style": "powerline",
           "properties": {
-            "style": "dallas",
-            "threshold": 0
+            "style": "full"
           },
-          "template": " <#030304>\uf252</> {{ .FormattedMs }}s ",
-          "type": "executiontime"
+          "powerline_symbol": "\ue0b4",
+          "style": "powerline",
+          "template": " \uf07b {{ .Path }} ",
+          "type": "path"
         },
         {
           "background": "p:lavender",
@@ -54,7 +51,7 @@
             "fetch_stash_count": true
           },
           "style": "powerline",
-          "template": " <#030304>{{ .UpstreamIcon }}</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <#030304>\uf044</> {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#030304>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} <#030304>\uf692</> {{ .StashCount }}{{ end }} ",
+          "template": " <#030304>{{ .UpstreamIcon }}</>{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <#030304>\uf044</> {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <#030304>\uf046</> {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} {{ end }} ",
           "type": "git"
         },
         {
@@ -110,22 +107,15 @@
           "style": "diamond",
           "template": "{{ if eq \"False\" (title (default \"False\" .Env.DISABLE_SEGMENT_PROJECT_NODE)) }}<#39fe54>\udb80\udf99</> {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}{{ end }}",
           "type": "node"
-        }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "left",
-      "newline": true,
-      "segments": [
+        },
         {
-          "foreground": "p:pink",
+          "foreground": "p:lavender",
           "properties": {
-            "style": "full"
+            "always_enabled": true
           },
           "style": "plain",
-          "template": "\uf07b {{ .Path }}",
-          "type": "path"
+          "template": "<#F5C2E7>\uf252</> {{ .FormattedMs }} ",
+          "type": "executiontime"
         }
       ],
       "type": "prompt"
@@ -137,7 +127,7 @@
         {
           "foreground": "p:pink",
           "style": "plain",
-          "template": "\u2514\u2500Δ",
+          "template": "$",
           "type": "text"
         }
       ],
