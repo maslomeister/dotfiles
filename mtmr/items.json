@@ -1,248 +1,275 @@
 [
-	{
-		"type": "escape",
-		"width": 80,
-		"background": "#D145DE",
-		"align": "left"
-	},
-	{
-		"type": "appleScriptTitledButton",
-		"action": "appleScript",
-		"refreshInterval": 1,
-		"background": "#fff",
-		"source": {
-			"inline": "if application \"Visual Studio Code\" is running then\r return \"F2\"\r else\r return \"\"\r end if"
-		},
-		"actionAppleScript": {
-			"inline": "tell application \"System Events\"\r key code 120\r end tell"
-		},
-		"width": 80,
-		"align": "left"
-	},
-	// {
-	//   "type": "group",
-	//   "align": "left",
-	//   "title": "FN",
-	//   "items": [
-	//       {
-	//           "type": "close",
-	//           "bordered": false,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F1",
-	//           "action": "keyPress",
-	//           "keycode": 122,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F2",
-	//           "action": "keyPress",
-	//           "keycode": 120,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F3",
-	//           "action": "keyPress",
-	//           "keycode": 99,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F4",
-	//           "action": "keyPress",
-	//           "keycode": 118,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//         "type": "staticButton",
-	//         "title": " ",
-	//         "width": 16,
-	//         "bordered": false,
-	//         "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F5",
-	//           "action": "keyPress",
-	//           "keycode": 96,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F6",
-	//           "action": "keyPress",
-	//           "keycode": 97,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F7",
-	//           "action": "keyPress",
-	//           "keycode": 98,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F8",
-	//           "action": "keyPress",
-	//           "keycode": 100,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": " ",
-	//           "width": 0,
-	//           "bordered": false,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F9",
-	//           "action": "keyPress",
-	//           "keycode": 101,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F10",
-	//           "action": "keyPress",
-	//           "keycode": 109,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F11",
-	//           "action": "keyPress",
-	//           "keycode": 103,
-	//           "width": 80,
-	//           "align": "left"
-	//       },
-	//       {
-	//           "type": "staticButton",
-	//           "title": "F12",
-	//           "action": "keyPress",
-	//           "keycode": 111,
-	//           "width": 80,
-	//           "align": "left"
-	//       }
-	//   ]
-	// },
-	// Mute mic
-	{
-		"type": "appleScriptTitledButton",
-		"width": 64,
-		"align": "right",
-		"refreshInterval": 1,
-		"source": {
-			"inline": "if application \"Discord\" is running then \r if input volume of (get volume settings) = 0 then \r return {\" \", \"unmute\"} \r else \r return {\" \", \"mute\"} \r end if \r else \r return \"\" \r end if"
-		},
-		"action": "appleScript",
-		"actionAppleScript": {
-			"inline": "if input volume of (get volume settings) = 0 then\rset level to 100\rset volume input volume level\rreturn {\" \", \"muted\"}\relse\rset level to 0\rset volume input volume level\rreturn {\" \", \"unmuted\"}\rend if"
-		},
-		"alternativeImages": {
-			"unmute": {
-				"base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0idXVpZC05ZmFjNWViMS00MWJlLTQyNTUtYThmYi04M2M0NTJlOTNjYmYiIGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+CiAgPHJlY3QgeD0iMTcuODIiIHk9IjUiIHdpZHRoPSIxMjMuMzgiIGhlaWdodD0iMTU1Ljc4IiBzdHlsZT0iZmlsbDogcmdiYSgyMDgsIDIwOCwgMjA4LCAwKTsiLz4KICA8cGF0aCBkPSJtMzEuNjIsNzcuNDFjMCwyNS40OCwxNy4xLDQzLjY0LDQzLjA0LDQ1LjE1djIwLjEyaC0yNy4zMmMtMS45NSwwLTMuNDcsMS41NC0zLjQ3LDMuNDRzMS41MywzLjQ2LDMuNDcsMy40Nmg2MS41MmMxLjg5LDAsMy40Mi0xLjU2LDMuNDItMy40NnMtMS41My0zLjQ0LTMuNDItMy40NGgtMjcuMzJ2LTIwLjEyYzI1Ljg5LTEuNTEsNDMtMTkuNjcsNDMtNDUuMTV2LTEzLjI1YzAtMS44OS0xLjU0LTMuNDQtMy40NC0zLjQ0cy0zLjQ2LDEuNTQtMy40NiwzLjQ0djEzLjA0YzAsMjIuOTgtMTUuNTQsMzguODktMzkuNTgsMzguODlzLTM5LjU2LTE1LjkxLTM5LjU2LTM4Ljg5di0xMy4wNGMwLTEuODktMS41NC0zLjQ0LTMuNDctMy40NHMtMy40MiwxLjU0LTMuNDIsMy40NHYxMy4yNVptMjMuNTEtMi44MWMwLDE0LjM1LDkuMTQsMjQuODksMjIuOTUsMjQuODlzMjIuOTYtMTAuNTQsMjIuOTYtMjQuODlWMjkuODdjMC0xNC4zNS05LjE0LTI0Ljg3LTIyLjk2LTI0Ljg3cy0yMi45NSwxMC41Mi0yMi45NSwyNC44N3Y0NC43M1ptNi44OSwwVjI5Ljg3YzAtMTAuNTUsNi4yNC0xOC4xNSwxNi4wNS0xOC4xNXMxNi4wNyw3LjYsMTYuMDcsMTguMTV2NDQuNzNjMCwxMC41NS02LjI0LDE4LjE1LTE2LjA3LDE4LjE1cy0xNi4wNS03LjYtMTYuMDUtMTguMTVaIiBzdHlsZT0iZmlsbDogcmdiYSgyMDgsIDIwOCwgMjA4LCAuODUpOyIvPgogIDxwYXRoIGQ9Im0xMjguNTQsMTI4Ljk5YzEuMzYsMS4zNiwzLjY0LDEuMzYsNC45NiwwLDEuNC0xLjQzLDEuNC0zLjYsMC01TDMwLjQ2LDIxLjA1Yy0xLjMzLTEuMzMtMy41OS0xLjQzLTUuMDIsMC0xLjM0LDEuMzMtMS4zNCwzLjY0LDAsNC45NmwxMDMuMSwxMDIuOTdaIiBzdHlsZT0iZmlsbDogcmdiYSgyMDgsIDIwOCwgMjA4LCAuODUpOyIvPgo8L3N2Zz4="
-			},
-			"mute": {
-				"base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0idXVpZC0xYjYzMmYwZC1mNTczLTQxNTUtOWRmZC05OWY1YzkzMDc4NTQiIGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+CiAgPHJlY3QgeD0iMzEuNjciIHk9IjQiIHdpZHRoPSI5My42OSIgaGVpZ2h0PSIxNTYuMzkiIHN0eWxlPSJmaWxsOiByZ2JhKDIwOCwgMjA4LCAyMDgsIDApOyIvPgogIDxwYXRoIGQ9Im0zMS42Nyw3Ni42N2MwLDI1LjY5LDE3LjI1LDQ0LDQzLjM5LDQ1LjUydjIwLjI4aC0yNy41NGMtMS45NCwwLTMuNDksMS41Ni0zLjQ5LDMuNDZzMS41NCwzLjQ4LDMuNDksMy40OGg2Mi4wM2MxLjkxLDAsMy40NS0xLjU4LDMuNDUtMy40OHMtMS41NC0zLjQ2LTMuNDUtMy40NmgtMjcuNTR2LTIwLjI4YzI2LjExLTEuNTIsNDMuMzUtMTkuODMsNDMuMzUtNDUuNTJ2LTEzLjM2YzAtMS45MS0xLjU0LTMuNDYtMy40Ni0zLjQ2cy0zLjQ5LDEuNTYtMy40OSwzLjQ2djEzLjE1YzAsMjMuMTctMTUuNjYsMzkuMjEtMzkuOTEsMzkuMjFzLTM5Ljg5LTE2LjA0LTM5Ljg5LTM5LjIxdi0xMy4xNWMwLTEuOTEtMS41NC0zLjQ2LTMuNDYtMy40NnMtMy40OSwxLjU2LTMuNDksMy40NnYxMy4zNlptNDYuODQsMjEuOTJjMTMuNCwwLDIyLjEtMTAuMTYsMjIuMS0yNC4wOFYyOC4wOGMwLTEzLjktOC43LTI0LjA4LTIyLjEtMjQuMDhzLTIyLjA5LDEwLjE4LTIyLjA5LDI0LjA4djQ2LjQzYzAsMTMuOTIsOC43NCwyNC4wOCwyMi4wOSwyNC4wOFoiIHN0eWxlPSJmaWxsOiByZ2JhKDIwOCwgMjA4LCAyMDgsIC44NSk7Ii8+Cjwvc3ZnPg=="
-			}
-		}
-	},
-	{
-		"type": "play",
-		"align": "right",
-		"bordered": false,
-		"width": 64
-	},
-	{
-		"type": "volumeDown",
-		"bordered": false,
-		"align": "right",
-		"width": 60
-	},
-	{
-		"type": "volumeUp",
-		"bordered": false,
-		"align": "right",
-		"width": 60
-	},
-	{
-		"type": "brightnessDown",
-		"width": 48,
-		"bordered": false,
-		"align": "right"
-	},
-	{
-		"type": "brightnessUp",
-		"width": 60,
-		"bordered": false,
-		"align": "right"
-	},
-	// {
-	//   "type": "illuminationDown",
-	//   "bordered": false,
-	//   "align": "right",
-	//   "width": 60
-	// },
-	// {
-	//   "type": "illuminationUp",
-	//   "bordered": false,
-	//   "align": "right",
-	//   "width": 60
-	// },
-	{
-		"type": "staticButton",
-		"title": "",
-		"bordered": false,
-		"align": "right",
-		"width": 60,
-		"action": "appleScript",
-		"actionAppleScript": {
-			"inline": "tell application \"System Events\" \r key code 3 using {control down, command down} \r end tell"
-		},
-		"longAction": "appleScript",
-		"longActionAppleScript": {
-			"inline": "tell application \"System Events\" to keystroke \"f\" using {control down, command down}"
-		},
-		"image": {
-			"base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0idXVpZC1hNzRjNjk4MC0xZDA3LTQzOTQtOWQxYS03Mjg5ZDZkMjM2ZTMiIGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+CiAgPHJlY3QgeD0iNy42IiB5PSI3LjAxIiB3aWR0aD0iMTQ1IiBoZWlnaHQ9IjE0NS4wOCIgc3R5bGU9ImZpbGw6IHJnYmEoMjA4LCAyMDgsIDIwOCwgMCk7Ii8+CiAgPHBhdGggZD0ibTM1LjM3LDE3Ljk5YzMuMDQsMCw1LjUtMi40OSw1LjUtNS40OHMtMi40Ni01LjUtNS41LTUuNS01LjQ4LDIuNDYtNS40OCw1LjUsMi40OSw1LjQ4LDUuNDgsNS40OFptMjIuMzIsMGMzLjAzLDAsNS41NC0yLjQ5LDUuNTQtNS40OHMtMi41MS01LjUtNS41NC01LjUtNS40OCwyLjQ2LTUuNDgsNS41LDIuNDksNS40OCw1LjQ4LDUuNDhabTIyLjMyLDBjMy4wMywwLDUuNTQtMi40OSw1LjU0LTUuNDhzLTIuNTEtNS41LTUuNTQtNS41LTUuNDgsMi40Ni01LjQ4LDUuNSwyLjQ5LDUuNDgsNS40OCw1LjQ4Wm0yMi40LDBjMy4wNCwwLDUuNS0yLjQ5LDUuNS01LjQ4cy0yLjQ2LTUuNS01LjUtNS41LTUuNDgsMi40Ni01LjQ4LDUuNSwyLjQ5LDUuNDgsNS40OCw1LjQ4Wm0yMi4zMiwwYzMuMDQsMCw1LjU0LTIuNDksNS41NC01LjQ4cy0yLjUxLTUuNS01LjU0LTUuNS01LjQ4LDIuNDYtNS40OCw1LjUsMi40OSw1LjQ4LDUuNDgsNS40OFptMjIuMzYsMGMzLjAxLDAsNS41LTIuNDksNS41LTUuNDhzLTIuNDktNS41LTUuNS01LjUtNS41MiwyLjQ2LTUuNTIsNS41LDIuNDksNS40OCw1LjUyLDUuNDhabTAsMjIuMzJjMy4wMSwwLDUuNS0yLjQ5LDUuNS01LjQ4cy0yLjQ5LTUuNS01LjUtNS41LTUuNTIsMi41MS01LjUyLDUuNSwyLjQ5LDUuNDgsNS41Miw1LjQ4Wm0wLDIyLjMyYzMuMDEsMCw1LjUtMi40NCw1LjUtNS40OHMtMi40OS01LjUtNS41LTUuNS01LjUyLDIuNTEtNS41Miw1LjUsMi40OSw1LjQ4LDUuNTIsNS40OFptMCwyMi40YzMuMDEsMCw1LjUtMi40OSw1LjUtNS40OHMtMi40OS01LjUtNS41LTUuNS01LjUyLDIuNDYtNS41Miw1LjUsMi40OSw1LjQ4LDUuNTIsNS40OFptMCwyMi4zMmMzLjAxLDAsNS41LTIuNDQsNS41LTUuNDhzLTIuNDktNS41LTUuNS01LjUtNS41MiwyLjUxLTUuNTIsNS41LDIuNDksNS40OCw1LjUyLDUuNDhabTAsMjIuMzZjMy4wMSwwLDUuNS0yLjQ5LDUuNS01LjUycy0yLjQ5LTUuNS01LjUtNS41LTUuNTIsMi41MS01LjUyLDUuNSwyLjQ5LDUuNTIsNS41Miw1LjUyWk0xMi41OCwxNTIuMDVoMTM1Ljc2YzIuMzksMCw0LjI2LTEuODgsNC4yNi00LjIycy0xLjg4LTQuMi00LjI2LTQuMkgxNy45N2MtMS4zMywwLTEuOTUtLjYyLTEuOTUtMS45NVYxMS4xOWMwLTIuMy0xLjg4LTQuMTgtNC4yLTQuMThzLTQuMjIsMS44OC00LjIyLDQuMTh2MTM1Ljg3YzAsMy4wOCwxLjk0LDUsNC45OCw1WiIgc3R5bGU9ImZpbGw6IHJnYmEoMjA4LCAyMDgsIDIwOCwgLjg1KTsiLz4KICA8cGF0aCBkPSJtMzUsMTE5LjgyYy0uNjMsMi44NCwxLjY2LDQuOTksNC41NCw0LjMzbDI1Ljk0LTUuNDZjMy4wOS0uNjEsNC4yLTMuNDYsMi4xNC01LjU2bC04LjIzLTguMzEsNDYuMjEtNDUuNzUsOC4yMyw4LjMxYzIuMSwyLjA2LDUuMTQuOTUsNS43Ny0yLjE0bDUuNTYtMjYuMDRjLjY3LTIuODEtMS43MS00Ljk5LTQuNTYtNC4zM2wtMjUuOTQsNS40NmMtMy4wNy42MS00LjIsMy40Ni0yLjE0LDUuNTZsOC4yOSw4LjMxLTQ2LjI2LDQ1Ljc1LTguMjUtOC4zMWMtMi4wNi0yLjEtNS4xNC0uOS01Ljc1LDIuMTRsLTUuNTYsMjYuMDRaIiBzdHlsZT0iZmlsbDogcmdiYSgyMDgsIDIwOCwgMjA4LCAuODUpOyIvPgo8L3N2Zz4="
-		}
-	},
-	{
-		"type": "appleScriptTitledButton",
-		"width": 60,
-		"align": "right",
-		"refreshInterval": 1,
-		"source": {
-			"inline": "if application \"Activity Monitor\" is running then \r return {\" \", \"show\"} \r else \r return {\" \", \"hide\"} \r end if \r"
-		},
-		"action": "appleScript",
-		"actionAppleScript": {
-			"inline": "if application \"Activity Monitor\" is running then \r tell application \"Activity Monitor\" \r quit \r end tell \r else \r activate application \"Activity Monitor\" \r tell application \"System Events\" \r tell process \"Activity Monitor\" \r tell radio button \"CPU\" of radio group 1 of group 2 of toolbar 1 of window 1 to perform action \"AXPress\" \r end tell \r end tell \r end if \r"
-		},
-		"alternativeImages": {
-			"show": {
-				"base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0idXVpZC01NTQzNDMyOC1kNTdjLTQ0NGYtYTg0Ny01M2ExNWJhZTc0OWYiIGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+CiAgPHJlY3QgeD0iMy4zNCIgeT0iMi44MiIgd2lkdGg9IjE1My42NiIgaGVpZ2h0PSIxNTMuODkiIHN0eWxlPSJmaWxsOiByZ2JhKDIwOCwgMjA4LCAyMDgsIDApOyIvPgogIDxwYXRoIGQ9Im0zLjM0LDEwNy41N2MwLDIuNDUsMS43NSw0LjIsNC4yNSw0LjJoOS4yOXYyNi40MWMwLDMuMDQsMS45Niw1LDUsNWgyNi4yOXY5LjI5YzAsMi41LDEuNzUsNC4yNSw0LjIsNC4yNXM0LjI2LTEuNzUsNC4yNi00LjI1di05LjI5aDE5LjI4djkuMjljMCwyLjUsMS44MSw0LjI1LDQuMjYsNC4yNXM0LjI1LTEuNzUsNC4yNS00LjI1di05LjI5aDE5LjN2OS4yOWMwLDIuNSwxLjc1LDQuMjUsNC4yNSw0LjI1czQuMjItMS43NSw0LjIyLTQuMjV2LTkuMjloMjYuMjljMy4wNCwwLDQuOTgtMS45Niw0Ljk4LTV2LTI2LjQzaDkuMjljMi41LDAsNC4yNi0xLjc3LDQuMjYtNC4yMnMtMS43Ny00LjI1LTQuMjYtNC4yNWgtOS4yOXYtMTkuMzRoOS4yOWMyLjUsMCw0LjI2LTEuNzUsNC4yNi00LjJzLTEuNzctNC4yNi00LjI2LTQuMjZoLTkuMjl2LTE5LjMyaDkuMjljMi41LDAsNC4yNi0xLjc3LDQuMjYtNC4yMnMtMS43Ny00LjI0LTQuMjYtNC4yNGgtOS4yOXYtMjYuMWMwLTMuMDQtMS45NS00Ljk4LTQuOTgtNC45OGgtMjYuMjlWNy4zMWMwLTIuNS0xLjc3LTQuMjYtNC4yMi00LjI2cy00LjI1LDEuNzctNC4yNSw0LjI2djkuMjloLTE5LjNWNy4zMWMwLTIuNS0xLjc1LTQuMjYtNC4yNS00LjI2cy00LjI2LDEuNzctNC4yNiw0LjI2djkuMjloLTE5LjI4VjcuMzFjMC0yLjUtMS43Ny00LjI2LTQuMjYtNC4yNnMtNC4yLDEuNzctNC4yLDQuMjZ2OS4yOWgtMjYuMjljLTMuMDQsMC01LDEuOTQtNSw0Ljk4djI2LjEzSDcuNThjLTIuNSwwLTQuMjUsMS43Ny00LjI1LDQuMjZzMS43NSw0LjIsNC4yNSw0LjJoOS4yOXYxOS4zNEg3LjU4Yy0yLjUsMC00LjI1LDEuNzUtNC4yNSw0LjI1czEuNzUsNC4yMiw0LjI1LDQuMjJoOS4yOXYxOS4zNEg3LjU4Yy0yLjUsMC00LjI1LDEuNzUtNC4yNSw0LjI1Wm0yMiwyNS4xOVYyN2MwLTEuMzMuNjItMS45NCwxLjk1LTEuOTRoMTA1Ljc2YzEuMzMsMCwxLjkzLjYxLDEuOTMsMS45NHYxMDUuNzZjMCwxLjMzLS42LDEuOTYtMS45MywxLjk2SDI3LjI5Yy0xLjMzLDAtMS45NS0uNjItMS45NS0xLjk2Wm0yMS43OC0xNC45NGg2Ni4yM2MzLjE0LDAsNC44My0xLjYyLDQuODMtNC44N1Y0Ni44MWMwLTMuMjMtMS42OC00Ljg3LTQuODMtNC44N0g0Ny4xMmMtMy4yMSwwLTQuODUsMS42NC00Ljg1LDQuODd2NjYuMTRjMCwzLjI1LDEuNjQsNC44Nyw0Ljg1LDQuODdabTIuNC04Ljk5di01Ny44OWMwLTEuMDUuNzEtMS43MiwxLjc2LTEuNzJoNTcuODVjMS4wNSwwLDEuNzYuNjcsMS43NiwxLjcydjU3Ljg5YzAsMS0uNzEsMS43LTEuNzYsMS43aC01Ny44NWMtMS4wNSwwLTEuNzYtLjY5LTEuNzYtMS43WiIgc3R5bGU9ImZpbGw6IHJnYmEoMjA4LCAyMDgsIDIwOCwgLjg1KTsiLz4KPC9zdmc+"
-			},
-			"hide": {
-				"base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0idXVpZC1iMGU2MTIwOS1mMGExLTQ5M2EtOGFlZi1jZWI5YTA4NmQ4MGQiIGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+CiAgPHJlY3QgeD0iMy4yNyIgeT0iMi42IiB3aWR0aD0iMTUzLjY2IiBoZWlnaHQ9IjE1My44OSIgc3R5bGU9ImZpbGw6IHJnYmEoMjA4LCAyMDgsIDIwOCwgMCk7Ii8+CiAgPHBhdGggZD0ibTMuMjcsMTA3LjM1YzAsMi40NSwxLjc1LDQuMiw0LjI1LDQuMmg5LjI5djI2LjQxYzAsMy4wNCwxLjk2LDUsNSw1aDI2LjI5djkuMjljMCwyLjUsMS43NSw0LjI1LDQuMiw0LjI1czQuMjYtMS43NSw0LjI2LTQuMjV2LTkuMjloMTkuMjh2OS4yOWMwLDIuNSwxLjgxLDQuMjUsNC4yNiw0LjI1czQuMjUtMS43NSw0LjI1LTQuMjV2LTkuMjloMTkuM3Y5LjI5YzAsMi41LDEuNzUsNC4yNSw0LjI1LDQuMjVzNC4yMi0xLjc1LDQuMjItNC4yNXYtOS4yOWgyNi4yOWMzLjA0LDAsNC45OC0xLjk2LDQuOTgtNXYtMjYuNDNoOS4yOWMyLjUsMCw0LjI2LTEuNzcsNC4yNi00LjIycy0xLjc3LTQuMjUtNC4yNi00LjI1aC05LjI5di0xOS4zNGg5LjI5YzIuNSwwLDQuMjYtMS43NSw0LjI2LTQuMnMtMS43Ny00LjI2LTQuMjYtNC4yNmgtOS4yOXYtMTkuMzJoOS4yOWMyLjUsMCw0LjI2LTEuNzcsNC4yNi00LjIycy0xLjc3LTQuMjQtNC4yNi00LjI0aC05LjI5di0yNi4xYzAtMy4wNC0xLjk1LTQuOTgtNC45OC00Ljk4aC0yNi4yOVY3LjA5YzAtMi41LTEuNzctNC4yNi00LjIyLTQuMjZzLTQuMjUsMS43Ny00LjI1LDQuMjZ2OS4yOWgtMTkuM1Y3LjA5YzAtMi41LTEuNzUtNC4yNi00LjI1LTQuMjZzLTQuMjYsMS43Ny00LjI2LDQuMjZ2OS4yOWgtMTkuMjhWNy4wOWMwLTIuNS0xLjc3LTQuMjYtNC4yNi00LjI2cy00LjIsMS43Ny00LjIsNC4yNnY5LjI5aC0yNi4yOWMtMy4wNCwwLTUsMS45NC01LDQuOTh2MjYuMTNINy41MWMtMi41LDAtNC4yNSwxLjc3LTQuMjUsNC4yNnMxLjc1LDQuMiw0LjI1LDQuMmg5LjI5djE5LjM0SDcuNTFjLTIuNSwwLTQuMjUsMS43NS00LjI1LDQuMjVzMS43NSw0LjIyLDQuMjUsNC4yMmg5LjI5djE5LjM0SDcuNTFjLTIuNSwwLTQuMjUsMS43NS00LjI1LDQuMjVabTQzLjMsMTAuOGMtMy4yMywwLTQuOTYtMS42Ni00Ljk2LTQuOThWNDYuMTZjMC0zLjMyLDEuNzItNC45OCw0Ljk2LTQuOThoNjcuMTJjMy4yNywwLDQuOTUsMS42Niw0Ljk1LDQuOTh2NjcuMDFjMCwzLjMyLTEuNjgsNC45OC00Ljk1LDQuOThINDYuNTdabTIuNTMtOS4yMmMwLDEuMDkuNzEsMS43NCwxLjgsMS43NGg1OC40NmMxLjA5LDAsMS44LS42NSwxLjgtMS43NHYtNTguNTJjMC0xLjA3LS43MS0xLjc4LTEuOC0xLjc4aC01OC40NmMtMS4wOSwwLTEuOC43MS0xLjgsMS43OHY1OC41MloiIHN0eWxlPSJmaWxsOiByZ2JhKDIwOCwgMjA4LCAyMDgsIC44NSk7Ii8+Cjwvc3ZnPg=="
-			}
-		}
-	}
+  {
+    "type": "escape",
+    "width": 80,
+    "background": "#D145DE",
+    "align": "left"
+  },
+  {
+    "type": "appleScriptTitledButton",
+    "action": "appleScript",
+    "refreshInterval": 1,
+    "background": "#fff",
+    "source": {
+      "inline": "if application \"Visual Studio Code\" is running then\r return \"F2\"\r else\r return \"\"\r end if"
+    },
+    "actionAppleScript": {
+      "inline": "tell application \"System Events\"\r key code 120\r end tell"
+    },
+    "width": 80,
+    "align": "left"
+  },
+  // {
+  //   "type": "group",
+  //   "align": "left",
+  //   "title": "FN",
+  //   "items": [
+  //       {
+  //           "type": "close",
+  //           "bordered": false,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F1",
+  //           "action": "keyPress",
+  //           "keycode": 122,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F2",
+  //           "action": "keyPress",
+  //           "keycode": 120,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F3",
+  //           "action": "keyPress",
+  //           "keycode": 99,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F4",
+  //           "action": "keyPress",
+  //           "keycode": 118,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //         "type": "staticButton",
+  //         "title": " ",
+  //         "width": 16,
+  //         "bordered": false,
+  //         "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F5",
+  //           "action": "keyPress",
+  //           "keycode": 96,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F6",
+  //           "action": "keyPress",
+  //           "keycode": 97,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F7",
+  //           "action": "keyPress",
+  //           "keycode": 98,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F8",
+  //           "action": "keyPress",
+  //           "keycode": 100,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": " ",
+  //           "width": 0,
+  //           "bordered": false,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F9",
+  //           "action": "keyPress",
+  //           "keycode": 101,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F10",
+  //           "action": "keyPress",
+  //           "keycode": 109,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F11",
+  //           "action": "keyPress",
+  //           "keycode": 103,
+  //           "width": 80,
+  //           "align": "left"
+  //       },
+  //       {
+  //           "type": "staticButton",
+  //           "title": "F12",
+  //           "action": "keyPress",
+  //           "keycode": 111,
+  //           "width": 80,
+  //           "align": "left"
+  //       }
+  //   ]
+  // },
+  // Mute mic
+  {
+    "type": "appleScriptTitledButton",
+    "width": 64,
+    "align": "right",
+    "refreshInterval": 1,
+    "source": {
+      "inline": "if application \"Discord\" is running or application \"FaceTime\" is running or application \"Telegram\" is running then \r if input volume of (get volume settings) = 0 then \r return {\" \", \"unmute\"} \r else \r return {\" \", \"mute\"} \r end if \r else \r return \"\" \r end if"
+    },
+    "action": "appleScript",
+    "actionAppleScript": {
+      "inline": "if input volume of (get volume settings) = 0 then\rset level to 100\rset volume input volume level\rreturn {\" \", \"muted\"}\relse\rset level to 0\rset volume input volume level\rreturn {\" \", \"unmuted\"}\rend if"
+    },
+    "alternativeImages": {
+      "unmute": {
+        "base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0idXVpZC05ZmFjNWViMS00MWJlLTQyNTUtYThmYi04M2M0NTJlOTNjYmYiIGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+CiAgPHJlY3QgeD0iMTcuODIiIHk9IjUiIHdpZHRoPSIxMjMuMzgiIGhlaWdodD0iMTU1Ljc4IiBzdHlsZT0iZmlsbDogcmdiYSgyMDgsIDIwOCwgMjA4LCAwKTsiLz4KICA8cGF0aCBkPSJtMzEuNjIsNzcuNDFjMCwyNS40OCwxNy4xLDQzLjY0LDQzLjA0LDQ1LjE1djIwLjEyaC0yNy4zMmMtMS45NSwwLTMuNDcsMS41NC0zLjQ3LDMuNDRzMS41MywzLjQ2LDMuNDcsMy40Nmg2MS41MmMxLjg5LDAsMy40Mi0xLjU2LDMuNDItMy40NnMtMS41My0zLjQ0LTMuNDItMy40NGgtMjcuMzJ2LTIwLjEyYzI1Ljg5LTEuNTEsNDMtMTkuNjcsNDMtNDUuMTV2LTEzLjI1YzAtMS44OS0xLjU0LTMuNDQtMy40NC0zLjQ0cy0zLjQ2LDEuNTQtMy40NiwzLjQ0djEzLjA0YzAsMjIuOTgtMTUuNTQsMzguODktMzkuNTgsMzguODlzLTM5LjU2LTE1LjkxLTM5LjU2LTM4Ljg5di0xMy4wNGMwLTEuODktMS41NC0zLjQ0LTMuNDctMy40NHMtMy40MiwxLjU0LTMuNDIsMy40NHYxMy4yNVptMjMuNTEtMi44MWMwLDE0LjM1LDkuMTQsMjQuODksMjIuOTUsMjQuODlzMjIuOTYtMTAuNTQsMjIuOTYtMjQuODlWMjkuODdjMC0xNC4zNS05LjE0LTI0Ljg3LTIyLjk2LTI0Ljg3cy0yMi45NSwxMC41Mi0yMi45NSwyNC44N3Y0NC43M1ptNi44OSwwVjI5Ljg3YzAtMTAuNTUsNi4yNC0xOC4xNSwxNi4wNS0xOC4xNXMxNi4wNyw3LjYsMTYuMDcsMTguMTV2NDQuNzNjMCwxMC41NS02LjI0LDE4LjE1LTE2LjA3LDE4LjE1cy0xNi4wNS03LjYtMTYuMDUtMTguMTVaIiBzdHlsZT0iZmlsbDogcmdiYSgyMDgsIDIwOCwgMjA4LCAuODUpOyIvPgogIDxwYXRoIGQ9Im0xMjguNTQsMTI4Ljk5YzEuMzYsMS4zNiwzLjY0LDEuMzYsNC45NiwwLDEuNC0xLjQzLDEuNC0zLjYsMC01TDMwLjQ2LDIxLjA1Yy0xLjMzLTEuMzMtMy41OS0xLjQzLTUuMDIsMC0xLjM0LDEuMzMtMS4zNCwzLjY0LDAsNC45NmwxMDMuMSwxMDIuOTdaIiBzdHlsZT0iZmlsbDogcmdiYSgyMDgsIDIwOCwgMjA4LCAuODUpOyIvPgo8L3N2Zz4="
+      },
+      "mute": {
+        "base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0idXVpZC0xYjYzMmYwZC1mNTczLTQxNTUtOWRmZC05OWY1YzkzMDc4NTQiIGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+CiAgPHJlY3QgeD0iMzEuNjciIHk9IjQiIHdpZHRoPSI5My42OSIgaGVpZ2h0PSIxNTYuMzkiIHN0eWxlPSJmaWxsOiByZ2JhKDIwOCwgMjA4LCAyMDgsIDApOyIvPgogIDxwYXRoIGQ9Im0zMS42Nyw3Ni42N2MwLDI1LjY5LDE3LjI1LDQ0LDQzLjM5LDQ1LjUydjIwLjI4aC0yNy41NGMtMS45NCwwLTMuNDksMS41Ni0zLjQ5LDMuNDZzMS41NCwzLjQ4LDMuNDksMy40OGg2Mi4wM2MxLjkxLDAsMy40NS0xLjU4LDMuNDUtMy40OHMtMS41NC0zLjQ2LTMuNDUtMy40NmgtMjcuNTR2LTIwLjI4YzI2LjExLTEuNTIsNDMuMzUtMTkuODMsNDMuMzUtNDUuNTJ2LTEzLjM2YzAtMS45MS0xLjU0LTMuNDYtMy40Ni0zLjQ2cy0zLjQ5LDEuNTYtMy40OSwzLjQ2djEzLjE1YzAsMjMuMTctMTUuNjYsMzkuMjEtMzkuOTEsMzkuMjFzLTM5Ljg5LTE2LjA0LTM5Ljg5LTM5LjIxdi0xMy4xNWMwLTEuOTEtMS41NC0zLjQ2LTMuNDYtMy40NnMtMy40OSwxLjU2LTMuNDksMy40NnYxMy4zNlptNDYuODQsMjEuOTJjMTMuNCwwLDIyLjEtMTAuMTYsMjIuMS0yNC4wOFYyOC4wOGMwLTEzLjktOC43LTI0LjA4LTIyLjEtMjQuMDhzLTIyLjA5LDEwLjE4LTIyLjA5LDI0LjA4djQ2LjQzYzAsMTMuOTIsOC43NCwyNC4wOCwyMi4wOSwyNC4wOFoiIHN0eWxlPSJmaWxsOiByZ2JhKDIwOCwgMjA4LCAyMDgsIC44NSk7Ii8+Cjwvc3ZnPg=="
+      }
+    }
+  },
+  {
+    "type": "appleScriptTitledButton",
+    "align": "right",
+    "source": {
+      "inline": "if application \"Spotify\" is running then\rtell application \"Spotify\"\rif player state is playing then\rreturn (get artist of current track) & \" – \" & (get name of current track)\relse\rreturn \"\"\rend if\rend tell\rend if\rreturn \"\"\r"
+    },
+    "action": "appleScript",
+    "actionAppleScript": {
+      "inline": "if application \"Spotify\" is running then\rtell application \"Spotify\"\rif player state is playing then\rnext track\rend if\rend tell\rend if\r"
+    },
+    "refreshInterval": 1,
+    "image": {
+      "base64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAYUExURUdwTB3WXx3UXh3VXx7XYBkXFRpVLRyURmIaeAQAAAAEdFJOUwDDO3fSqUUkAAABbklEQVRIx61VbW6DMAztoAeYNA7ApB6gkzhAWS24wIAL0HABaK6/pHFNEhy8TXu/kPzkPD/8cTj8K7KPAqB+K5NhQPCUrABCXe7HOUYYZxgVRLiG8RfY4DUgFFtC7cffAfZTFBwBdhWEKfgEq4ocEjgj4ZQifO6/QG9kkETp1dDeVWfRKx3XYSW0LoqY5kCElXDrQkyeCCuh6WL0M4nIWQIyzqixdfKU1koFDKvyCA8NJMzU4xiD+b4kfHRpsIyKc6hBwjVptFHVY51EMAINNDFGJITKDNQcdpX74Hz0CQ3rY5qwMp4EIxrlafzrsYZ2Veb0DkRgfNCUok4Y1fqEijfyi2b8RE9beWqa48Y/uvCNMcH9btfUi+/CGLR1vhL6Zz9N/vBlaCU+7lwY/cmJ67Ryen/2tj23PLqJBodZH8vgj544vOL4pxfI5acrSFxi8hrkU9TSKr78ZpnL50A8KPJJEo+afBblwyqf5j/iGys5j6ScrST2AAAAAElFTkSuQmCC"
+    }
+  },
+  {
+    "type": "previous",
+    "bordered": false,
+    "align": "right",
+    "width": 64
+  },
+  {
+    "type": "next",
+    "bordered": false,
+    "align": "right",
+    "width": 64
+  },
+  {
+    "type": "play",
+    "align": "right",
+    "bordered": false,
+    "width": 64
+  },
+  {
+    "type": "volumeDown",
+    "bordered": false,
+    "align": "right",
+    "width": 60
+  },
+  {
+    "type": "volumeUp",
+    "bordered": false,
+    "align": "right",
+    "width": 60
+  },
+  {
+    "type": "brightnessDown",
+    "width": 48,
+    "bordered": false,
+    "align": "right"
+  },
+  {
+    "type": "brightnessUp",
+    "width": 60,
+    "bordered": false,
+    "align": "right"
+  },
+  // {
+  //   "type": "illuminationDown",
+  //   "bordered": false,
+  //   "align": "right",
+  //   "width": 60
+  // },
+  // {
+  //   "type": "illuminationUp",
+  //   "bordered": false,
+  //   "align": "right",
+  //   "width": 60
+  // },
+  {
+    "type": "staticButton",
+    "title": "",
+    "bordered": false,
+    "align": "right",
+    "width": 60,
+    "action": "appleScript",
+    "actionAppleScript": {
+      "inline": "tell application \"System Events\" \r key code 3 using {control down, command down} \r end tell"
+    },
+    "longAction": "appleScript",
+    "longActionAppleScript": {
+      "inline": "tell application \"System Events\" to keystroke \"f\" using {control down, command down}"
+    },
+    "image": {
+      "base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0idXVpZC1hNzRjNjk4MC0xZDA3LTQzOTQtOWQxYS03Mjg5ZDZkMjM2ZTMiIGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+CiAgPHJlY3QgeD0iNy42IiB5PSI3LjAxIiB3aWR0aD0iMTQ1IiBoZWlnaHQ9IjE0NS4wOCIgc3R5bGU9ImZpbGw6IHJnYmEoMjA4LCAyMDgsIDIwOCwgMCk7Ii8+CiAgPHBhdGggZD0ibTM1LjM3LDE3Ljk5YzMuMDQsMCw1LjUtMi40OSw1LjUtNS40OHMtMi40Ni01LjUtNS41LTUuNS01LjQ4LDIuNDYtNS40OCw1LjUsMi40OSw1LjQ4LDUuNDgsNS40OFptMjIuMzIsMGMzLjAzLDAsNS41NC0yLjQ5LDUuNTQtNS40OHMtMi41MS01LjUtNS41NC01LjUtNS40OCwyLjQ2LTUuNDgsNS41LDIuNDksNS40OCw1LjQ4LDUuNDhabTIyLjMyLDBjMy4wMywwLDUuNTQtMi40OSw1LjU0LTUuNDhzLTIuNTEtNS41LTUuNTQtNS41LTUuNDgsMi40Ni01LjQ4LDUuNSwyLjQ5LDUuNDgsNS40OCw1LjQ4Wm0yMi40LDBjMy4wNCwwLDUuNS0yLjQ5LDUuNS01LjQ4cy0yLjQ2LTUuNS01LjUtNS41LTUuNDgsMi40Ni01LjQ4LDUuNSwyLjQ5LDUuNDgsNS40OCw1LjQ4Wm0yMi4zMiwwYzMuMDQsMCw1LjU0LTIuNDksNS41NC01LjQ4cy0yLjUxLTUuNS01LjU0LTUuNS01LjQ4LDIuNDYtNS40OCw1LjUsMi40OSw1LjQ4LDUuNDgsNS40OFptMjIuMzYsMGMzLjAxLDAsNS41LTIuNDksNS41LTUuNDhzLTIuNDktNS41LTUuNS01LjUtNS41MiwyLjQ2LTUuNTIsNS41LDIuNDksNS40OCw1LjUyLDUuNDhabTAsMjIuMzJjMy4wMSwwLDUuNS0yLjQ5LDUuNS01LjQ4cy0yLjQ5LTUuNS01LjUtNS41LTUuNTIsMi41MS01LjUyLDUuNSwyLjQ5LDUuNDgsNS41Miw1LjQ4Wm0wLDIyLjMyYzMuMDEsMCw1LjUtMi40NCw1LjUtNS40OHMtMi40OS01LjUtNS41LTUuNS01LjUyLDIuNTEtNS41Miw1LjUsMi40OSw1LjQ4LDUuNTIsNS40OFptMCwyMi40YzMuMDEsMCw1LjUtMi40OSw1LjUtNS40OHMtMi40OS01LjUtNS41LTUuNS01LjUyLDIuNDYtNS41Miw1LjUsMi40OSw1LjQ4LDUuNTIsNS40OFptMCwyMi4zMmMzLjAxLDAsNS41LTIuNDQsNS41LTUuNDhzLTIuNDktNS41LTUuNS01LjUtNS41MiwyLjUxLTUuNTIsNS41LDIuNDksNS40OCw1LjUyLDUuNDhabTAsMjIuMzZjMy4wMSwwLDUuNS0yLjQ5LDUuNS01LjUycy0yLjQ5LTUuNS01LjUtNS41LTUuNTIsMi41MS01LjUyLDUuNSwyLjQ5LDUuNTIsNS41Miw1LjUyWk0xMi41OCwxNTIuMDVoMTM1Ljc2YzIuMzksMCw0LjI2LTEuODgsNC4yNi00LjIycy0xLjg4LTQuMi00LjI2LTQuMkgxNy45N2MtMS4zMywwLTEuOTUtLjYyLTEuOTUtMS45NVYxMS4xOWMwLTIuMy0xLjg4LTQuMTgtNC4yLTQuMThzLTQuMjIsMS44OC00LjIyLDQuMTh2MTM1Ljg3YzAsMy4wOCwxLjk0LDUsNC45OCw1WiIgc3R5bGU9ImZpbGw6IHJnYmEoMjA4LCAyMDgsIDIwOCwgLjg1KTsiLz4KICA8cGF0aCBkPSJtMzUsMTE5LjgyYy0uNjMsMi44NCwxLjY2LDQuOTksNC41NCw0LjMzbDI1Ljk0LTUuNDZjMy4wOS0uNjEsNC4yLTMuNDYsMi4xNC01LjU2bC04LjIzLTguMzEsNDYuMjEtNDUuNzUsOC4yMyw4LjMxYzIuMSwyLjA2LDUuMTQuOTUsNS43Ny0yLjE0bDUuNTYtMjYuMDRjLjY3LTIuODEtMS43MS00Ljk5LTQuNTYtNC4zM2wtMjUuOTQsNS40NmMtMy4wNy42MS00LjIsMy40Ni0yLjE0LDUuNTZsOC4yOSw4LjMxLTQ2LjI2LDQ1Ljc1LTguMjUtOC4zMWMtMi4wNi0yLjEtNS4xNC0uOS01Ljc1LDIuMTRsLTUuNTYsMjYuMDRaIiBzdHlsZT0iZmlsbDogcmdiYSgyMDgsIDIwOCwgMjA4LCAuODUpOyIvPgo8L3N2Zz4="
+    }
+  },
+  {
+    "type": "appleScriptTitledButton",
+    "width": 60,
+    "align": "right",
+    "refreshInterval": 1,
+    "source": {
+      "inline": "if application \"Activity Monitor\" is running then \r return {\" \", \"show\"} \r else \r return {\" \", \"hide\"} \r end if \r"
+    },
+    "action": "appleScript",
+    "actionAppleScript": {
+      "inline": "if application \"Activity Monitor\" is running then \r tell application \"Activity Monitor\" \r quit \r end tell \r else \r activate application \"Activity Monitor\" \r tell application \"System Events\" \r tell process \"Activity Monitor\" \r tell radio button \"CPU\" of radio group 1 of group 2 of toolbar 1 of window 1 to perform action \"AXPress\" \r end tell \r end tell \r end if \r"
+    },
+    "alternativeImages": {
+      "show": {
+        "base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0idXVpZC01NTQzNDMyOC1kNTdjLTQ0NGYtYTg0Ny01M2ExNWJhZTc0OWYiIGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+CiAgPHJlY3QgeD0iMy4zNCIgeT0iMi44MiIgd2lkdGg9IjE1My42NiIgaGVpZ2h0PSIxNTMuODkiIHN0eWxlPSJmaWxsOiByZ2JhKDIwOCwgMjA4LCAyMDgsIDApOyIvPgogIDxwYXRoIGQ9Im0zLjM0LDEwNy41N2MwLDIuNDUsMS43NSw0LjIsNC4yNSw0LjJoOS4yOXYyNi40MWMwLDMuMDQsMS45Niw1LDUsNWgyNi4yOXY5LjI5YzAsMi41LDEuNzUsNC4yNSw0LjIsNC4yNXM0LjI2LTEuNzUsNC4yNi00LjI1di05LjI5aDE5LjI4djkuMjljMCwyLjUsMS44MSw0LjI1LDQuMjYsNC4yNXM0LjI1LTEuNzUsNC4yNS00LjI1di05LjI5aDE5LjN2OS4yOWMwLDIuNSwxLjc1LDQuMjUsNC4yNSw0LjI1czQuMjItMS43NSw0LjIyLTQuMjV2LTkuMjloMjYuMjljMy4wNCwwLDQuOTgtMS45Niw0Ljk4LTV2LTI2LjQzaDkuMjljMi41LDAsNC4yNi0xLjc3LDQuMjYtNC4yMnMtMS43Ny00LjI1LTQuMjYtNC4yNWgtOS4yOXYtMTkuMzRoOS4yOWMyLjUsMCw0LjI2LTEuNzUsNC4yNi00LjJzLTEuNzctNC4yNi00LjI2LTQuMjZoLTkuMjl2LTE5LjMyaDkuMjljMi41LDAsNC4yNi0xLjc3LDQuMjYtNC4yMnMtMS43Ny00LjI0LTQuMjYtNC4yNGgtOS4yOXYtMjYuMWMwLTMuMDQtMS45NS00Ljk4LTQuOTgtNC45OGgtMjYuMjlWNy4zMWMwLTIuNS0xLjc3LTQuMjYtNC4yMi00LjI2cy00LjI1LDEuNzctNC4yNSw0LjI2djkuMjloLTE5LjNWNy4zMWMwLTIuNS0xLjc1LTQuMjYtNC4yNS00LjI2cy00LjI2LDEuNzctNC4yNiw0LjI2djkuMjloLTE5LjI4VjcuMzFjMC0yLjUtMS43Ny00LjI2LTQuMjYtNC4yNnMtNC4yLDEuNzctNC4yLDQuMjZ2OS4yOWgtMjYuMjljLTMuMDQsMC01LDEuOTQtNSw0Ljk4djI2LjEzSDcuNThjLTIuNSwwLTQuMjUsMS43Ny00LjI1LDQuMjZzMS43NSw0LjIsNC4yNSw0LjJoOS4yOXYxOS4zNEg3LjU4Yy0yLjUsMC00LjI1LDEuNzUtNC4yNSw0LjI1czEuNzUsNC4yMiw0LjI1LDQuMjJoOS4yOXYxOS4zNEg3LjU4Yy0yLjUsMC00LjI1LDEuNzUtNC4yNSw0LjI1Wm0yMiwyNS4xOVYyN2MwLTEuMzMuNjItMS45NCwxLjk1LTEuOTRoMTA1Ljc2YzEuMzMsMCwxLjkzLjYxLDEuOTMsMS45NHYxMDUuNzZjMCwxLjMzLS42LDEuOTYtMS45MywxLjk2SDI3LjI5Yy0xLjMzLDAtMS45NS0uNjItMS45NS0xLjk2Wm0yMS43OC0xNC45NGg2Ni4yM2MzLjE0LDAsNC44My0xLjYyLDQuODMtNC44N1Y0Ni44MWMwLTMuMjMtMS42OC00Ljg3LTQuODMtNC44N0g0Ny4xMmMtMy4yMSwwLTQuODUsMS42NC00Ljg1LDQuODd2NjYuMTRjMCwzLjI1LDEuNjQsNC44Nyw0Ljg1LDQuODdabTIuNC04Ljk5di01Ny44OWMwLTEuMDUuNzEtMS43MiwxLjc2LTEuNzJoNTcuODVjMS4wNSwwLDEuNzYuNjcsMS43NiwxLjcydjU3Ljg5YzAsMS0uNzEsMS43LTEuNzYsMS43aC01Ny44NWMtMS4wNSwwLTEuNzYtLjY5LTEuNzYtMS43WiIgc3R5bGU9ImZpbGw6IHJnYmEoMjA4LCAyMDgsIDIwOCwgLjg1KTsiLz4KPC9zdmc+"
+      },
+      "hide": {
+        "base64": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0idXVpZC1iMGU2MTIwOS1mMGExLTQ5M2EtOGFlZi1jZWI5YTA4NmQ4MGQiIGRhdGEtbmFtZT0iTGF5ZXIgMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTYwIDE2MCI+CiAgPHJlY3QgeD0iMy4yNyIgeT0iMi42IiB3aWR0aD0iMTUzLjY2IiBoZWlnaHQ9IjE1My44OSIgc3R5bGU9ImZpbGw6IHJnYmEoMjA4LCAyMDgsIDIwOCwgMCk7Ii8+CiAgPHBhdGggZD0ibTMuMjcsMTA3LjM1YzAsMi40NSwxLjc1LDQuMiw0LjI1LDQuMmg5LjI5djI2LjQxYzAsMy4wNCwxLjk2LDUsNSw1aDI2LjI5djkuMjljMCwyLjUsMS43NSw0LjI1LDQuMiw0LjI1czQuMjYtMS43NSw0LjI2LTQuMjV2LTkuMjloMTkuMjh2OS4yOWMwLDIuNSwxLjgxLDQuMjUsNC4yNiw0LjI1czQuMjUtMS43NSw0LjI1LTQuMjV2LTkuMjloMTkuM3Y5LjI5YzAsMi41LDEuNzUsNC4yNSw0LjI1LDQuMjVzNC4yMi0xLjc1LDQuMjItNC4yNXYtOS4yOWgyNi4yOWMzLjA0LDAsNC45OC0xLjk2LDQuOTgtNXYtMjYuNDNoOS4yOWMyLjUsMCw0LjI2LTEuNzcsNC4yNi00LjIycy0xLjc3LTQuMjUtNC4yNi00LjI1aC05LjI5di0xOS4zNGg5LjI5YzIuNSwwLDQuMjYtMS43NSw0LjI2LTQuMnMtMS43Ny00LjI2LTQuMjYtNC4yNmgtOS4yOXYtMTkuMzJoOS4yOWMyLjUsMCw0LjI2LTEuNzcsNC4yNi00LjIycy0xLjc3LTQuMjQtNC4yNi00LjI0aC05LjI5di0yNi4xYzAtMy4wNC0xLjk1LTQuOTgtNC45OC00Ljk4aC0yNi4yOVY3LjA5YzAtMi41LTEuNzctNC4yNi00LjIyLTQuMjZzLTQuMjUsMS43Ny00LjI1LDQuMjZ2OS4yOWgtMTkuM1Y3LjA5YzAtMi41LTEuNzUtNC4yNi00LjI1LTQuMjZzLTQuMjYsMS43Ny00LjI2LDQuMjZ2OS4yOWgtMTkuMjhWNy4wOWMwLTIuNS0xLjc3LTQuMjYtNC4yNi00LjI2cy00LjIsMS43Ny00LjIsNC4yNnY5LjI5aC0yNi4yOWMtMy4wNCwwLTUsMS45NC01LDQuOTh2MjYuMTNINy41MWMtMi41LDAtNC4yNSwxLjc3LTQuMjUsNC4yNnMxLjc1LDQuMiw0LjI1LDQuMmg5LjI5djE5LjM0SDcuNTFjLTIuNSwwLTQuMjUsMS43NS00LjI1LDQuMjVzMS43NSw0LjIyLDQuMjUsNC4yMmg5LjI5djE5LjM0SDcuNTFjLTIuNSwwLTQuMjUsMS43NS00LjI1LDQuMjVabTQzLjMsMTAuOGMtMy4yMywwLTQuOTYtMS42Ni00Ljk2LTQuOThWNDYuMTZjMC0zLjMyLDEuNzItNC45OCw0Ljk2LTQuOThoNjcuMTJjMy4yNywwLDQuOTUsMS42Niw0Ljk1LDQuOTh2NjcuMDFjMCwzLjMyLTEuNjgsNC45OC00Ljk1LDQuOThINDYuNTdabTIuNTMtOS4yMmMwLDEuMDkuNzEsMS43NCwxLjgsMS43NGg1OC40NmMxLjA5LDAsMS44LS42NSwxLjgtMS43NHYtNTguNTJjMC0xLjA3LS43MS0xLjc4LTEuOC0xLjc4aC01OC40NmMtMS4wOSwwLTEuOC43MS0xLjgsMS43OHY1OC41MloiIHN0eWxlPSJmaWxsOiByZ2JhKDIwOCwgMjA4LCAyMDgsIC44NSk7Ii8+Cjwvc3ZnPg=="
+      }
+    }
+  }
 ]
